@@ -31,8 +31,8 @@ is_pdf_chatbot = st.checkbox("PDF chatbot")
 
 uploaded_file = st.sidebar.file_uploader("Sube tu archivo PDF", type="pdf")
 
-if not uploaded_file:
-    # Inicializar los mensajes si aún no existe en la sesión
+if uploaded_file:
+    
     if "messages" not in st.session_state:
         st.session_state["messages"] = [{"role": "assistant", "content": "Hola, soy ChatGPT, ¿En qué puedo ayudarte?"}]
 
